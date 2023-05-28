@@ -1,0 +1,133 @@
+function reverseString(word) {
+    newString = [];
+    for (var i = 0; i < word.length; i++){
+        var reverse = word[i].split('').reverse().join();
+        newString.push(reverse)
+    }
+    return newString
+}
+console.log(reverseString(["ANointed Joseph"]))
+
+//Returns the highest number in an array
+function getMax(numbers) {
+    maxNumber = [];
+    for (var i = 0; i < numbers.length; i++) {
+        if (numbers[i] > maxNumber) {
+            maxNumber = numbers[i];
+        }
+        else{
+            console.log('False');
+        }
+    }
+    return maxNumber;
+}
+console.log(getMax(([1,2,3,4,5,6,7, 45])))
+
+//Retruns the capitalized version of the string
+
+function stringCapitalize(string) {
+    capitalizedString = [];
+    for ( var i = 0; i < string.length; i++) {
+        var capitalCharacter = string[i].toUpperCase();
+        capitalizedString.push(capitalCharacter)
+    }
+    return capitalizedString;
+}
+//Capitalize the first letter in the string
+console.log(stringCapitalize((["javascript"])))
+
+function capitalizeFirstLetter(string) {
+    var capitalizedString = string.charAt(0).toUpperCase() + string.slice(1);
+    return capitalizedString;
+}
+
+console.log(capitalizeFirstLetter("javascript"));
+
+//Factorial recursive function
+function Factorial(number) {
+    if (number === 0) {
+        return 1;
+    }
+    else {
+        return  number * Factorial(number - 1);
+    }
+    
+}
+console.log(Factorial((68)))
+
+//Factorial usng loops
+function factorial(numberParameter) {
+    var result = 1;
+    for (var i = 1; i <= numberParameter; i++) {
+        result *= i;
+    }
+    return result;
+}
+console.log(factorial(23))
+
+//Number Vowels in a String 
+function vowels(string) {
+    var countedVowels = [];
+    var realVowels = ['a', 'e', 'i', 'o', 'u'];
+    for (var i = 0; i < string.length; i++) {
+        if (realVowels.includes(string[i].toLowerCase())) {
+            countedVowels.push(string[i]);
+        }
+    }
+    return countedVowels.length;
+}
+
+console.log(vowels("Anointed"));
+
+//Using Recursive function for counting vowels
+function vowels(string) {
+    if (string.length === 0) {
+        return 0;
+    }
+    var firstChar = string[0].toLowerCase();
+    var remainingString = string.slice(1);
+    
+    if (isVowel(firstChar)) {
+        return 1 + vowels(remainingString);
+    }
+    else{
+        return vowels(remainingString);
+    }
+}
+function isVowel(char) {
+    var vowels = ['a', 'e', 'i', 'o', 'u'];
+    return vowels.includes(char)
+}
+
+console.log(vowels("Programming with Mosh"));
+
+
+//Palindrome usng Function
+function isPalindrome(string) {
+    var reverssed = string.split('').reverse().join('');
+    return string === reverssed;
+}
+
+console.log(isPalindrome("Programming with Mosh"));
+console.log(isPalindrome("hah"))
+
+//Using Recursive Function
+ function isPalindrome(string) {
+    //Base case
+    if (string.length <= 1) {
+        return true;
+    }
+    //Recursive case;
+    if (string[0] === string[string.length - 1]) {
+        return isPalindrome(string.slice(1, -1));
+    }
+    else{
+        return false;
+    }
+ }
+console.log(isPalindrome("madam"));  
+console.log(isPalindrome("hello")); 
+
+
+
+
